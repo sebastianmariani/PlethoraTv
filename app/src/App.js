@@ -3,6 +3,7 @@ import './styles/app.css'
 
 //Components
 import Navbar from './components/Navbar'
+import FilterSearch from './components/FilterSearch'
 
 //Pages
 import Homepage from './pages/Homepage';
@@ -14,6 +15,7 @@ function App() {
   return (
     <Router>
       <Navbar />
+      <FilterSearch />
       <div className="container">
         <Switch>
           <Route exact path="/" component={Homepage}/>  
