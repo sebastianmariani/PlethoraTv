@@ -1,0 +1,23 @@
+.filtersearch__nav {
+  @include flex;
+  padding: 2rem 0 0.5rem 0;
+  color: $textColor;
+}
+.filtersearch__list {
+  @include flex;
+  padding-bottom: 2rem;
+  list-style-type: none;
+  select {
+    @extend %input;
+    background: $darkGrey;
+    color: $white;
+    padding: 0.5rem 1rem;
+  }
+
+  button {
+    @extend %input;
+    background-color: $blue;
+    color: $white;
+    padding: 0.8rem 4rem;
+  }
+}

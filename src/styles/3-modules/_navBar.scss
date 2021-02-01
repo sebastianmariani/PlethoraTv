@@ -1,0 +1,45 @@
+.navbar {
+  background-color: $darkGrey;
+  padding: 20px 0;
+}
+
+.navbar__nav {
+  @include flex;
+}
+
+a {
+  text-decoration: none;
+  color: $textColorHeader;
+}
+
+.navbar__links {
+  color: $textColorHeader;
+  list-style-type: none;
+  :hover {
+    color: $white;
+  }
+}
+input {
+  @extend %input;
+  background-color: $lighterGrey;
+  padding: 0.5rem;
+  color: $textColorHeader;
+  input:focus {
+    outline: none;
+  }
+}
+
+.navbar__brand {
+  color: $textColorHeader;
+  font-size: 1.5rem;
+}
+
+.leftNav {
+  @include flex;
+  width: 30%;
+}
+
+.rightNav {
+  @include flex;
+  width: 25%;
+}

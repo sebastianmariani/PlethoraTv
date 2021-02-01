@@ -24,7 +24,7 @@ const Navbar = () => {
                             <i className="fas fa-star"></i>
                         </li>
                         <li>
-                            <input type="text"/>
+                            <input type="text" placeholder="Search"/>
                         </li>
                     </ul>
                 </nav>
