@@ -19,5 +19,8 @@
     background-color: $blue;
     color: $white;
     padding: 0.8rem 4rem;
+    &:active {
+      display: none;
+    }
   }
 }
