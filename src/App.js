@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import Homepage from './pages/Homepage';
 import Moviespage from './pages/Moviespage';
 import Tvshowspage from './pages/Tvshowspage';
+import Infopage from './pages/Infopage';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Homepage}/>    
           <Route exact path="/movies" component={Moviespage}/>  
-          <Route exact path="/tvshows" component={Tvshowspage}/>  
+          <Route exact path="/tvshows" component={Tvshowspage}/>
+          <Route exact path="/info/:id" component={Infopage}/> 
         </Switch>
       </div>
     </Router>

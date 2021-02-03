@@ -1,0 +1,9 @@
+input {
+  @extend %input;
+  background-color: $lighterGrey;
+  padding: 0.5rem;
+  color: $textColorHeader;
+  input:focus {
+    outline: none;
+  }
+}

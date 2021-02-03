@@ -1,7 +1,10 @@
 @import "./1-helpers/variables";
 @import "./1-helpers/mixins";
+
 @import "./2-basics/base";
 @import "./2-basics/input";
 
 @import "./3-modules/navBar";
 @import "./3-modules/filterSearch";
+@import "./3-modules/searchBar";
+@import "./3-modules/infoPage";
