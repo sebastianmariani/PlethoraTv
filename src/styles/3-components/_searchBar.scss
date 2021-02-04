@@ -1,0 +1,43 @@
+.searchbar {
+  width: 50%;
+  position: relative;
+}
+.search {
+  @include flex;
+  background-color: $lighterGrey;
+  border-radius: 5px;
+  padding: 0 0.5rem;
+  input {
+    @extend %input;
+    background-color: inherit;
+    padding: 0.8rem;
+    color: $textColorHeader;
+  }
+  input:focus {
+    outline-style: none;
+  }
+}
+.listResult {
+  position: absolute;
+  width: 100%;
+  background-color: $white;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.itemList {
+  @include flex;
+  margin: 2%;
+  color: $darkGrey;
+  transition: 0.3s ease-in-out;
+  img {
+    width: 7%;
+    border-radius: 3px;
+    transition: 0.3s ease-in-out;
+  }
+  &:hover {
+    font-size: 1.2em;
+    img {
+      width: 15%;
+    }
+  }
+}

@@ -18,6 +18,14 @@ a {
   :hover {
     color: $white;
   }
+  input {
+    @extend %input;
+    background-color: $lighterGrey;
+    padding: 0.5rem;
+    &:focus {
+      outline-style: none;
+    }
+  }
 }
 
 .navbar__brand {

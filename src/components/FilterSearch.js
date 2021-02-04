@@ -1,6 +1,25 @@
 const FilterSearch = () => {
     return (
         <div className="container">
+            <div className="searchCriteria">
+                <h3>Choose Tv show</h3>
+                <hr></hr>
+                <div>
+                    <div className="searchfilter">
+                        <p>Genres</p>
+                        <input></input>
+                    </div>
+                    <div className="searchfilter">
+                        <p>Country</p>
+                        <input></input>
+                    </div>
+                    <div className="searchfilter">
+                        <p>Year</p>
+                        <input placeholder="From"></input>
+                        <input placeholder="To"></input>
+                    </div>
+                </div>
+            </div>
             <div className="filtersearch__nav">
                 <p>Total</p>
                 <p>Sort by</p>

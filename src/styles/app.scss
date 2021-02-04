@@ -4,7 +4,8 @@
 @import "./2-basics/base";
 @import "./2-basics/input";
 
-@import "./3-modules/navBar";
-@import "./3-modules/filterSearch";
-@import "./3-modules/searchBar";
-@import "./3-modules/infoPage";
+@import "./3-components/navBar";
+@import "./3-components/filterSearch";
+@import "./3-components/searchBar";
+
+@import "./4-pages/infoPage";
