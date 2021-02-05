@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-// import SearchBar from './SearchBar'
+import SearchBar from './SearchBar'
 
 const Navbar = () => {
     return (
@@ -17,7 +17,7 @@ const Navbar = () => {
                             <Link to="/movies">Movies</Link>
                         </li>
                     </ul>
-                    <ul className="navbar__links rightNav">
+                    {/* <ul className="navbar__links rightNav">
                         <li>
                             <i className="fas fa-bell"></i>
                         </li>
@@ -27,8 +27,8 @@ const Navbar = () => {
                         <li>
                             <input type="text" placeholder="Search..."/>
                         </li>
-                    </ul>
-                    {/* <SearchBar /> */}
+                    </ul> */}
+                    <SearchBar />
                 </nav>
             </div>
         </div>
