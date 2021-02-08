@@ -1,6 +1,7 @@
 .searchbar {
   width: 50%;
   position: relative;
+  color: $textColorHeader;
 }
 .search {
   @include flex;
@@ -17,6 +18,9 @@
     outline-style: none;
     width: 100%;
   }
+  span:hover {
+    cursor: pointer;
+  }
 }
 .listResult {
   position: absolute;
@@ -27,23 +31,30 @@
 }
 .itemList {
   display: flex;
-  margin: 2%;
+  padding: 3%;
   color: $darkGrey;
   transition: 0.3s ease-in-out;
+  border-bottom: 1px solid $textColorHeader;
   img {
     width: 7%;
     border-radius: 3px;
     transition: 0.3s ease-in-out;
+    margin-right: 2%;
   }
   &:hover {
     img {
       width: 15%;
     }
+    background-color: $textColorHeader;
   }
-  .info {
-    margin-left: 1em;
-    h6 {
-      font-weight: 200;
-    }
+}
+.noResult {
+  display: flex;
+  margin: 2%;
+  color: $textColor;
+  font-size: 1.2rem;
+  font-weight: 100;
+  p {
+    margin-left: 10%;
   }
 }

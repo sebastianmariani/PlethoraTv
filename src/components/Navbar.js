@@ -1,7 +1,14 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SearchBar from './SearchBar'
 
 const Navbar = () => {
+    const [isActiveSearch, setIsActiveSearch] = useState(false)
+
+    const toggleFocus = () => {
+        setIsActiveSearch(!isActiveSearch)
+    }
+
     return (
         <div className="navbar">
             <div className="container">
@@ -17,18 +24,21 @@ const Navbar = () => {
                             <Link to="/movies">Movies</Link>
                         </li>
                     </ul>
-                    {/* <ul className="navbar__links rightNav">
-                        <li>
-                            <i className="fas fa-bell"></i>
-                        </li>
-                        <li>
-                            <i className="fas fa-star"></i>
-                        </li>
-                        <li>
-                            <input type="text" placeholder="Search..."/>
-                        </li>
-                    </ul> */}
-                    <SearchBar />
+                    {isActiveSearch ? (
+                        <SearchBar toggleFocus={toggleFocus}/>
+                    ): (
+                        <ul className="navbar__links rightNav">
+                            <li>
+                                <i className="fas fa-bell"></i>
+                            </li>
+                            <li>
+                                <i className="fas fa-star"></i>
+                            </li>
+                            <li>
+                                <input type="text" placeholder="Search..." onFocus={toggleFocus}/>
+                            </li>
+                        </ul>
+                    )}
                 </nav>
             </div>
         </div>

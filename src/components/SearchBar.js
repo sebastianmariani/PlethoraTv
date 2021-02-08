@@ -1,6 +1,11 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-const SearchBar = () => {
+import MovieElement from './MovieElement';
+import TvElement from './TvElement';
+import ActorElement from './ActorElement';
+import UnfoundElement from './UnfoundElement';
+
+const SearchBar = (props) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [results, setResults] = useState([]);
 
@@ -18,31 +23,38 @@ const SearchBar = () => {
             }
         })
     }
+
+    const getInfo = (e) => {
+        console.log(e)
+    }
+
+    
     return (
         <div className="searchbar">
             <div className="search">
                 <input 
+                    autoFocus
                     type="text" 
                     value={searchTerm}
                     onChange= { onSearchHandler }/>
-                <a href="/">close</a>
+                <span onClick={props.toggleFocus}>close</span>
             </div>
-            {results.length > 0 && (
-            <div className="listResult">
-                {results.map((result) => (
-                    <div className="itemList" key={result.id}>
-                        {result.poster_path ? (
-                            <img src={`http://image.tmdb.org/t/p/w200${result.poster_path}`} alt={`${result.title} poster`}/>    
-                        ) : (
-                            <img className="filler-poster" alt={`${result.title} poster`}/>
-                        )}
-                        <div className="info">
-                            <h5>{result.title}</h5>
-                            <h6>{result.media_type}</h6>
-                        </div>
-                    </div>
-                ))}
+            {results.length > 0 ? (
+            <div className="listResult" onClick={getInfo}>
+                {results.map((result) => {
+                    if( result.media_type === "movie") {
+                        return <MovieElement result={result} key={result.id}/>
+                    } else if ( result.media_type === "tv"){
+                        return <TvElement result={result}  key={result.id}/>
+                    } else if ( result.media_type === "person"){
+                        return <ActorElement result={result} key={result.id}/>
+                    } else {
+                        return <span></span>
+                    }
+                })}
             </div>
+            ) : (
+            <div className="listResult"><UnfoundElement /></div>
             )}
         </div>
     )
