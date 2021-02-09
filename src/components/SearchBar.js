@@ -23,10 +23,10 @@ const SearchBar = (props) => {
             }
         })
     }
-
-    const getInfo = (e) => {
-        console.log(e)
-    }
+    // TO REVIEW IT AND FIX IT
+    // const getInfo = (e) => {
+    //     console.log(e)
+    // }
 
     
     return (
@@ -40,7 +40,7 @@ const SearchBar = (props) => {
                 <span onClick={props.toggleFocus}>close</span>
             </div>
             {results.length > 0 ? (
-            <div className="listResult" onClick={getInfo}>
+            <div className="listResult">
                 {results.map((result) => {
                     if( result.media_type === "movie") {
                         return <MovieElement result={result} key={result.id}/>
