@@ -1,4 +1,22 @@
-const Infopage = () => {
+import { useState, useEffect } from 'react';
+
+
+//FIX THIS PROBLEM
+const Infopage = (props) => {
+    const [movie, setMovie] = useState();
+    let id = props.match.params.id;
+
+    useEffect(() => {
+        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=bafd2ca046c30c5e5ef91a74e308e5b7&language=en-US`)
+        .then(res => res.json())
+        .then(data => {
+            const info = data
+            setMovie(info)
+            console.log(info)
+        })
+        console.log(movie)
+    },[id])
+
     return (
         <div className="infopage">
             <div>

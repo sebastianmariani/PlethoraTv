@@ -14,7 +14,7 @@ const Navbar = () => {
             <div className="container">
                 <nav className="navbar__nav">
                     <ul className="navbar__links leftNav">
-                        <li className="navbar__brand">
+                        <li>
                             <Link to="/">Plethora</Link>
                         </li>
                         <li>

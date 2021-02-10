@@ -1,15 +1,10 @@
 .navbar {
   background-color: $darkGrey;
-  padding: 20px 0;
 }
 
 .navbar__nav {
   @include flex;
-}
-
-a {
-  text-decoration: none;
-  color: $textColorHeader;
+  padding: 2% 0;
 }
 
 .navbar__links {
@@ -28,14 +23,18 @@ a {
   }
 }
 
-.navbar__brand {
-  color: $textColorHeader;
-  font-size: 1.5rem;
-}
-
 .leftNav {
   @include flex;
   width: 30%;
+  font-weight: 200;
+  font-size: 1.3rem;
+  a {
+    text-decoration: none;
+    color: $textColorHeader;
+    &:focus {
+      color: $blue;
+    }
+  }
 }
 
 .rightNav {

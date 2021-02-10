@@ -1,4 +1,4 @@
-import unknownImg from '../assets/unknownImg.png'
+import unknownImg from '../assets/unknownImg.png';
 
 const Poster = (props) => {
     const {title, poster_path, overview, vote_average, name} = props.data
