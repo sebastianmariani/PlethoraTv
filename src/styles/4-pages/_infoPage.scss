@@ -2,8 +2,12 @@
   @include flex;
   align-items: flex-start;
   padding: 20px 0;
+  color: $lighterGrey;
   img {
     border-radius: 5px;
+  }
+  .unknownImg {
+    width: 100%;
   }
 }
 

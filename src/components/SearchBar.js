@@ -23,11 +23,6 @@ const SearchBar = (props) => {
             }
         })
     }
-    // TO REVIEW IT AND FIX IT
-    // const getInfo = (e) => {
-    //     console.log(e)
-    // }
-
     
     return (
         <div className="searchbar">
@@ -43,11 +38,11 @@ const SearchBar = (props) => {
             <div className="listResult">
                 {results.map((result) => {
                     if( result.media_type === "movie") {
-                        return <MovieElement result={result} key={result.id}/>
+                        return <MovieElement toggleFocus={props.toggleFocus} result={result} key={result.id}/>
                     } else if ( result.media_type === "tv"){
-                        return <TvElement result={result}  key={result.id}/>
+                        return <TvElement toggleFocus={props.toggleFocus} result={result}  key={result.id}/>
                     } else if ( result.media_type === "person"){
-                        return <ActorElement result={result} key={result.id}/>
+                        return <ActorElement toggleFocus={props.toggleFocus} result={result} key={result.id}/>
                     } else {
                         return <span></span>
                     }

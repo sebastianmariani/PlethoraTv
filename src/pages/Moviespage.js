@@ -15,10 +15,12 @@ const Moviespage = () => {
         .then(data => {
             setLatestMovies((prev) => prev.concat(data.results))
         })
+        .catch((err) => 
+        console.log(err))
     }, [page])
 
     window.onscroll = function() {
-        if ((window.innerHeight + window.scrollY * 1.2) >= document.body.offsetHeight) {
+        if ((window.innerHeight + window.scrollY * 1.1) >= document.body.offsetHeight) {
             setPage(page + 1)
         }
     };
@@ -27,8 +29,7 @@ const Moviespage = () => {
             <FilterSearch />
             <div className="posterPage">
                 {latestMovies.length > 0 && latestMovies.map((movie) =>
-                    // <Link to={`/info/${movie.title.replace('%', ' ')}`} key={movie.id}>
-                    <Link to={`/info/${movie.id}`} key={movie.id}>
+                    <Link className="link" to={`/info/movie/${movie.id}`} key={movie.id}>
                         <Poster data={movie}/>
                     </Link>
                 )}

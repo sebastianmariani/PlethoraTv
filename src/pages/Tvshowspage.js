@@ -19,7 +19,7 @@ const Tvshowspage = () => {
     },[page])
 
     window.onscroll = function() {
-        if ((window.innerHeight + window.scrollY * 1.2) >= document.body.offsetHeight) {
+        if ((window.innerHeight + window.scrollY * 1.1) >= document.body.offsetHeight) {
             setPage(page + 1)
         }
     };
@@ -29,7 +29,7 @@ const Tvshowspage = () => {
             <FilterSearch />
             <div className="posterPage">
                 {latestTvshows.length > 0 && latestTvshows.map((tvShow) =>
-                <Link to={`/info/${tvShow.name}`} key={tvShow.id}>
+                <Link className="link" to={`/info/tv/${tvShow.id}`} key={tvShow.id}>
                     <Poster data={tvShow}/>
                 </Link>
                 )}
