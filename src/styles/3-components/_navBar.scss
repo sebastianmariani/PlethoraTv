@@ -31,9 +31,9 @@
   a {
     text-decoration: none;
     color: $textColorHeader;
-    // &:focus {
-    //   color: $blue;
-    // }
+    &:focus {
+      color: $blue;
+    }
   }
 }
 

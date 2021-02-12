@@ -31,7 +31,9 @@ const Infopage = (props) => {
                         </div>
                         <div className="infolist">
                             <p><b>Name:</b> {data.name}</p>
-                            <p><b>Place of birth:</b> {data.place_of_birth}</p>
+                            {data.place_of_birth != null && (
+                                <p><b>Place of birth:</b> {data.place_of_birth}</p>
+                            )}
                             {data.birthday != null && (
                                 <p><b>Born:</b> {data.birthday}</p>
                             )}

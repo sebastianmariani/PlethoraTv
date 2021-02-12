@@ -2,7 +2,6 @@ import React ,{ useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import Poster from '../components/Poster';
-import FilterSearch from '../components/FilterSearch';
 
 const Tvshowspage = () => {
     const [latestTvshows, setLatestTvshows] = useState([]);
@@ -26,7 +25,6 @@ const Tvshowspage = () => {
 
     return (
         <div>
-            <FilterSearch />
             <div className="posterPage">
                 {latestTvshows.length > 0 && latestTvshows.map((tvShow) =>
                 <Link className="link" to={`/info/tv/${tvShow.id}`} key={tvShow.id}>
