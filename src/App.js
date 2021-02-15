@@ -3,6 +3,7 @@ import './styles/app.scss'
 
 //Components
 import Navbar from './components/Navbar'
+import { GlobalProvider } from './context/GlobalState';
 
 //Pages
 import Homepage from './pages/Homepage';
@@ -12,17 +13,19 @@ import Infopage from './pages/Infopage';
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <div className="container">
-        <Switch>
-          <Route exact path="/" component={Homepage}/>    
-          <Route exact path="/movies" component={Moviespage}/>  
-          <Route exact path="/tvshows" component={Tvshowspage}/>
-          <Route exact path="/info/:data_type/:id" component={Infopage}/> 
-        </Switch>
-      </div>
-    </Router>
+    <GlobalProvider>
+      <Router>
+        <Navbar />
+        <div className="container">
+          <Switch>
+            <Route exact path="/" component={Homepage}/>    
+            <Route exact path="/movies" component={Moviespage}/>  
+            <Route exact path="/tvshows" component={Tvshowspage}/>
+            <Route exact path="/info/:data_type/:id" component={Infopage}/> 
+          </Switch>
+        </div>
+      </Router>
+    </GlobalProvider>
   );
 }
 

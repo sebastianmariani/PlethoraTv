@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { GlobalContext } from '../context/GlobalState';
 
 import unknownImg from '../assets/unknownImg.png'
 
@@ -14,9 +15,17 @@ const Infopage = (props) => {
             const newData = await response.json();
             setData(newData);
             console.log(newData)
+            console.log(data)
         }
         fetchData();
     },[id, data_type])
+
+    const { addShowToWatchlist, watchList } = useContext(GlobalContext)
+    
+    let storedShow = watchList.find( i => i.id === data.id)
+
+    const watchlistDisabled = storedShow ? true : false;
+
     if (data) {
         if (data_type === "person"){
             return (
@@ -73,7 +82,10 @@ const Infopage = (props) => {
                             <p><b>Status:</b> {data.status}</p>
                             <p><b>Dutation:</b> {data.runtime || data.episode_run_time[0]} min</p>
                             <button><i className="fas fa-star"></i> Add to favorites</button><br/>
-                            <button><i className="fas fa-star"></i> Add to watch later</button><br/>
+                            <button 
+                                onClick={() => addShowToWatchlist(data)}
+                                disabled = {watchlistDisabled}
+                            ><i className="fas fa-star"></i> Add to watch later</button><br/>
                             <button><i className="fas fa-bell"></i> Enable notifications</button><br/>
                         </div>
                     </div>
