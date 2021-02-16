@@ -29,10 +29,10 @@ const Navbar = () => {
                     ): (
                         <ul className="navbar__links rightNav">
                             <li>
-                                <i className="fas fa-bell"></i>
+                                <i className="fas fa-star"></i>
                             </li>
                             <li>
-                                <i className="fas fa-star"></i>
+                                <i class="fas fa-clock"></i>
                             </li>
                             <li>
                                 <input type="text" placeholder="Search..." onFocus={toggleFocus}/>

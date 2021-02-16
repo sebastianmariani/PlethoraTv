@@ -28,6 +28,7 @@ const SearchBar = (props) => {
         <div className="searchbar">
             <div className="search">
                 <input 
+                    onFocus={props.toggleFocus}
                     autoFocus
                     type="text" 
                     value={searchTerm}

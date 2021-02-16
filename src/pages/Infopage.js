@@ -8,23 +8,16 @@ const Infopage = (props) => {
     const [data, setData] = useState(null);
     const data_type = props.match.params.data_type;
     const id = props.match.params.id;
+    const { addShowToWatchlist,removeShowFromWatchlist, addShowToFavorite, removeShowFromFavorite, watchlist, favorite } = useContext(GlobalContext)
 
     useEffect(() => { 
         const fetchData = async () => {
             const response = await fetch(`https://api.themoviedb.org/3/${data_type}/${id}?api_key=bafd2ca046c30c5e5ef91a74e308e5b7&language=en-US`);
             const newData = await response.json();
             setData(newData);
-            console.log(newData)
-            console.log(data)
         }
         fetchData();
     },[id, data_type])
-
-    const { addShowToWatchlist, watchList } = useContext(GlobalContext)
-    
-    let storedShow = watchList.find( i => i.id === data.id)
-
-    const watchlistDisabled = storedShow ? true : false;
 
     if (data) {
         if (data_type === "person"){
@@ -81,12 +74,36 @@ const Infopage = (props) => {
                             )}</p>
                             <p><b>Status:</b> {data.status}</p>
                             <p><b>Dutation:</b> {data.runtime || data.episode_run_time[0]} min</p>
-                            <button><i className="fas fa-star"></i> Add to favorites</button><br/>
-                            <button 
-                                onClick={() => addShowToWatchlist(data)}
-                                disabled = {watchlistDisabled}
-                            ><i className="fas fa-star"></i> Add to watch later</button><br/>
-                            <button><i className="fas fa-bell"></i> Enable notifications</button><br/>
+                            {favorite.find( i => i.id === data.id) ? (
+                                <span>
+                                    <button className="remove" onClick={() => removeShowFromFavorite(data.id)}>
+                                        <i className="fas fa-star"></i> Remove from favorite
+                                    </button>
+                                    <br/>
+                                </span>
+                            ) : (
+                                <span>
+                                    <button className="add" onClick={() => addShowToFavorite(data)}>
+                                        <i className="fas fa-star"></i> Add to favorite
+                                    </button>
+                                    <br/>
+                                </span>
+                            )}
+                            {watchlist.find( i => i.id === data.id) ? (
+                                <span>
+                                    <button className="remove" onClick={() => removeShowFromWatchlist(data.id)}>
+                                        <i className="fas fa-star"></i> Remove from watch list
+                                    </button>
+                                    <br/>
+                                </span>
+                            ) : (
+                                <span>
+                                    <button className="add" onClick={() => addShowToWatchlist(data)}z>
+                                        <i className="fas fa-star"></i> Add to watch list
+                                    </button>
+                                    <br/>
+                                </span>
+                            )}
                         </div>
                     </div>
                     <div className="description">

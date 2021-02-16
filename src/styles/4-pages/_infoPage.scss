@@ -18,12 +18,25 @@
   }
   button {
     @extend %input;
-    background-color: $blue;
-    color: $white;
     padding: 10px;
     margin: 0.5rem 0;
     &:hover {
       cursor: pointer;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  .add {
+    color: $white;
+    background-color: $blue;
+  }
+  .remove {
+    color: $lighterGrey;
+    border: 1.5px solid $textColorHeader;
+    &:hover {
+      border: 1.5px solid $blue;
+      transition: 0.5s ease-in-out;
     }
   }
 }
