@@ -1,0 +1,59 @@
+.list {
+  margin-top: 2rem;
+  color: $lighterGrey;
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  img {
+    width: 10%;
+    border-radius: 3px;
+  }
+  .text {
+    width: 65%;
+    h4 {
+      margin-bottom: 1rem;
+      transition: 0.5s ease-in-out;
+    }
+    p {
+      opacity: 0;
+      transition: 0.5s ease-in-out;
+    }
+  }
+  .watchlistItem {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $textColorHeader;
+    padding: 1rem;
+    &:hover {
+      background-color: $textColorHeader;
+      h4 {
+        transform: translateX(40%);
+      }
+      p {
+        opacity: 1;
+      }
+    }
+  }
+  button {
+    @extend %input;
+    color: $lighterGrey;
+    border: 1.5px solid $textColorHeader;
+    align-self: center;
+    padding: 3px;
+    &:hover {
+      cursor: pointer;
+      border: 1.5px solid $blue;
+      transition: 0.5s ease-in-out;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.emptyList {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -21,13 +21,6 @@
       outline-style: none;
     }
   }
-}
-
-.leftNav {
-  @include flex;
-  width: 30%;
-  font-weight: 200;
-  font-size: 1.3rem;
   a {
     text-decoration: none;
     color: $textColorHeader;
@@ -37,7 +30,16 @@
   }
 }
 
+.leftNav {
+  @include flex;
+  width: 30%;
+  font-weight: 200;
+  font-size: 1.3rem;
+}
+
 .rightNav {
   @include flex;
-  width: 25%;
+  width: 30%;
+  font-weight: 200;
+  font-size: 1rem;
 }

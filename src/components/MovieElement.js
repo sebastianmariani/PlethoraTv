@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-import unknownImg from '../assets/unknownImg.png'
+import unknownImg from '../assets/unknownImg.png';
 
 const MovieElement = (props) => {
     return (

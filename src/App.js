@@ -10,6 +10,8 @@ import Homepage from './pages/Homepage';
 import Moviespage from './pages/Moviespage';
 import Tvshowspage from './pages/Tvshowspage';
 import Infopage from './pages/Infopage';
+import WatchList from './pages/WatchList';
+import FavoriteList from './pages/FavoriteList';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             <Route exact path="/movies" component={Moviespage}/>  
             <Route exact path="/tvshows" component={Tvshowspage}/>
             <Route exact path="/info/:data_type/:id" component={Infopage}/> 
+            <Route exact path="/watch-list" component={WatchList}/>
+            <Route exact path="/favorite-list" component={FavoriteList}/>
           </Switch>
         </div>
       </Router>

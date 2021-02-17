@@ -62,18 +62,34 @@ const Infopage = (props) => {
                             )}               
                         </div>
                         <div className="infolist">
-                            <p><b>Rating:</b> {data.vote_average}</p>
-                            <p><b>Release Year:</b> {data.release_date}</p>
-                            <p><b>Genres:</b>
-                            {data.genres.map((genre) => 
-                                <span> {genre.name} </span>
-                            )}</p>
-                            <p><b>Countries:</b>  
-                            {data.production_countries.map((country) => 
-                                <span> {country.name}  </span>
-                            )}</p>
-                            <p><b>Status:</b> {data.status}</p>
-                            <p><b>Dutation:</b> {data.runtime || data.episode_run_time[0]} min</p>
+                            {data.vote_average != null && (
+                                <p><b>Rating:</b> {data.vote_average}</p>
+                            )}
+                            {data.release_date != null && (
+                                <p><b>Release Year</b> {data.release_date}</p>
+                            )}
+                            {data.genres != null && (
+                                <p><b>Genres:</b>
+                                {data.genres.map((genre) => 
+                                    <span> {genre.name} </span>
+                                )}</p>
+                            )}
+                            {data.production_countries != null && (
+                                <p><b>Countries:</b>  
+                                {data.production_countries.map((country) => 
+                                    <span> {country.name}  </span>
+                                )}</p>
+                            )}
+                            {data.status != null && (
+                                <p><b>Status:</b> {data.status}</p>
+                            )}
+                            {data.runtime != null && (
+                                <p><b>Dutation:</b> {data.runtime} min</p>
+                            )}
+                            
+                            {data.episode_run_time != null && (
+                                <p><b>Dutation:</b> {data.episode_run_time} min</p>
+                            )}
                             {favorite.find( i => i.id === data.id) ? (
                                 <span>
                                     <button className="remove" onClick={() => removeShowFromFavorite(data.id)}>

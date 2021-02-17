@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import SearchBar from './SearchBar'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 const Navbar = () => {
     const [isActiveSearch, setIsActiveSearch] = useState(false)
@@ -29,10 +29,10 @@ const Navbar = () => {
                     ): (
                         <ul className="navbar__links rightNav">
                             <li>
-                                <i className="fas fa-star"></i>
+                                <Link to="/watch-list">watch-list</Link>
                             </li>
                             <li>
-                                <i class="fas fa-clock"></i>
+                                <Link to="/favorite-list">favorite</Link>
                             </li>
                             <li>
                                 <input type="text" placeholder="Search..." onFocus={toggleFocus}/>
