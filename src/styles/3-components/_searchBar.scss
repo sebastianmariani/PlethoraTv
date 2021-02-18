@@ -24,6 +24,7 @@
 }
 .listResult {
   position: absolute;
+  z-index: 1;
   width: 100%;
   background-color: $white;
   border-bottom-right-radius: 5px;

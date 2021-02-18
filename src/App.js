@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './styles/app.scss'
 
 //Components
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import { GlobalProvider } from './context/GlobalState';
 
 //Pages
@@ -17,16 +18,19 @@ function App() {
   return (
     <GlobalProvider>
       <Router>
-        <Navbar />
-        <div className="container">
-          <Switch>
-            <Route exact path="/" component={Homepage}/>    
-            <Route exact path="/movies" component={Moviespage}/>  
-            <Route exact path="/tvshows" component={Tvshowspage}/>
-            <Route exact path="/info/:data_type/:id" component={Infopage}/> 
-            <Route exact path="/watch-list" component={WatchList}/>
-            <Route exact path="/favorite-list" component={FavoriteList}/>
-          </Switch>
+        <div className="webpage">
+          <Navbar />
+          <div className="container main">
+            <Switch>
+              <Route exact path="/" component={Homepage}/>    
+              <Route exact path="/movies" component={Moviespage}/>  
+              <Route exact path="/tvshows" component={Tvshowspage}/>
+              <Route exact path="/info/:data_type/:id" component={Infopage}/> 
+              <Route exact path="/watch-list" component={WatchList}/>
+              <Route exact path="/favorite-list" component={FavoriteList}/>
+            </Switch>
+          </div>
+          <Footer />
         </div>
       </Router>
     </GlobalProvider>

@@ -11,7 +11,7 @@ const FavoriteList = () => {
                 <div>
                     <h2>Watch List</h2>
                     {favorite.map(show => (    
-                        <div className="watchlistItem">
+                        <div className="showListItem">
                             {show.poster_path ? (
                                 <img src={`http://image.tmdb.org/t/p/w200${show.poster_path}`} alt={`${show.title || show.name} poster`}/>    
                             ) : (
@@ -22,7 +22,7 @@ const FavoriteList = () => {
                                 <p>{show.overview}</p>
                             </div>
                             <button className="remove" onClick={() => removeShowFromFavorite(show.id)}>
-                                <i className="fas fa-star"></i> Remove from watch list
+                                <i className="fas fa-star"></i> Remove from favorite
                             </button>
                         </div>
                     ))}

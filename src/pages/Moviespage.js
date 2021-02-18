@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+
 import Poster from '../components/Poster'
 
 const Moviespage = () => {
@@ -8,7 +9,8 @@ const Moviespage = () => {
     const [page, setPage] = useState(1);
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=bafd2ca046c30c5e5ef91a74e308e5b7&language=en-US&page=${page}`)
+        const { REACT_APP_API_KEY } = process.env;
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${REACT_APP_API_KEY}&language=en-US&page=${page}`)
         .then(res => res.json())
         .then(data => {
             setMovies((prev) => 

@@ -11,7 +11,7 @@ const WatchList = () => {
                 <div>
                     <h2>Watch List</h2>
                     {watchlist.map(show => (    
-                        <div className="watchlistItem">
+                        <div className="showListItem">
                             {show.poster_path ? (
                                 <img src={`http://image.tmdb.org/t/p/w200${show.poster_path}`} alt={`${show.title || show.name} poster`}/>    
                             ) : (
