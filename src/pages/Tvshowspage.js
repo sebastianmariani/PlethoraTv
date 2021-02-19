@@ -8,8 +8,7 @@ const Tvshowspage = () => {
     const [page, setPage] = useState(1)
 
     useEffect(() => {
-        const { REACT_APP_API_KEY } = process.env;
-        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${REACT_APP_API_KEY}&language=en-US&page=${page}`)
+        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${page}`)
         .then(res => res.json())
         .then(data => {
             setLatestTvshows((prev) => prev.concat(data.results))

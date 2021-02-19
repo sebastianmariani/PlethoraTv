@@ -11,9 +11,8 @@ const Infopage = (props) => {
     const { addShowToWatchlist,removeShowFromWatchlist, addShowToFavorite, removeShowFromFavorite, watchlist, favorite} = useContext(GlobalContext)
 
     useEffect(() => { 
-        const { REACT_APP_API_KEY } = process.env;
         const fetchData = async () => {
-            const response = await fetch(`https://api.themoviedb.org/3/${data_type}/${id}?api_key=${REACT_APP_API_KEY}&language=en-US`);
+            const response = await fetch(`https://api.themoviedb.org/3/${data_type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`);
             const newData = await response.json();
             setData(newData);
         }
