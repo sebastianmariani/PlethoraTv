@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 import { GlobalProvider } from './context/GlobalState';
 
 //Pages
-// import Homepage from './pages/Homepage';
+import Homepage from './pages/Homepage';
 import Moviespage from './pages/Moviespage';
 import Tvshowspage from './pages/Tvshowspage';
 import Infopage from './pages/Infopage';
@@ -22,8 +22,7 @@ function App() {
           <Navbar />
           <div className="container main">
             <Switch>
-              {/* <Route exact path="/" component={Homepage}/>     */}
-              
+              <Route exact path="/" component={Homepage}/>    
               <Route exact path="/movies" component={Moviespage}/>  
               <Route exact path="/tvshows" component={Tvshowspage}/>
               <Route exact path="/info/:data_type/:id" component={Infopage}/> 

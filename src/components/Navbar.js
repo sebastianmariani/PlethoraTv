@@ -15,8 +15,7 @@ const Navbar = () => {
                 <nav className="navbar__nav">
                     <ul className="navbar__links leftNav">
                         <li>
-                            {/* <Link to="/">Plethora</Link> */}
-                            Plethora
+                            <Link to="/">Plethora</Link>
                         </li>
                         <li>
                             <Link to="/tvshows">TV Shows</Link>
