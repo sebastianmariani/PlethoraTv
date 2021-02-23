@@ -7,7 +7,7 @@ import UnfoundElement from './UnfoundElement';
 
 const SearchBar = (props) => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [results, setResults] = useState([]);
+    const [results, setResults] = useState(['']);
 
     const onSearchHandler = (e) => {
         e.preventDefault();

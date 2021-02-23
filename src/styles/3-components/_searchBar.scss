@@ -11,7 +11,7 @@
   input {
     @extend %input;
     background-color: inherit;
-    padding: 0.8rem;
+    padding: 0.5rem;
     color: $textColorHeader;
   }
   input:focus {
