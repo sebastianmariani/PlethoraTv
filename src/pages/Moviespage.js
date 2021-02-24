@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 
 import Poster from '../components/Poster'
@@ -28,9 +27,7 @@ const Moviespage = () => {
         <div>
             <div className="posterPage">
                 {movies.length > 0 && movies.map((movie) =>
-                    <Link className="link" to={`/info/movie/${movie.id}`} key={movie.id}>
-                        <Poster data={movie}/>
-                    </Link>
+                    <Poster data={movie}/>
                 )}
             </div>
         </div>

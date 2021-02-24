@@ -16,7 +16,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: $lighterGrey;
   padding: 4%;
   overflow: auto;
   display: none;
@@ -29,8 +28,27 @@
   h5 {
     margin-bottom: 1rem;
   }
+  a {
+    color: $textColorHeader;
+  }
 }
-.poster:hover .poster-description {
-  display: block;
-  cursor: pointer;
+.poster:hover {
+  .poster-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.info {
+  margin-bottom: 1rem;
+}
+
+.dropdown {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  input {
+    margin-right: 0.5rem;
+  }
 }

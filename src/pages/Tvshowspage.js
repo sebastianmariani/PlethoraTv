@@ -1,5 +1,4 @@
 import React ,{ useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import Poster from '../components/Poster';
 
@@ -27,9 +26,7 @@ const Tvshowspage = () => {
         <div>
             <div className="posterPage">
                 {latestTvshows.length > 0 && latestTvshows.map((tvShow) =>
-                <Link className="link" to={`/info/tv/${tvShow.id}`} key={tvShow.id}>
                     <Poster data={tvShow}/>
-                </Link>
                 )}
             </div>  
         </div>
