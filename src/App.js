@@ -23,11 +23,11 @@ function App() {
           <div className="container main">
             <Switch>
               <Route exact path="/" component={Homepage}/>    
-              <Route exact path="/movies" component={Moviespage}/>  
-              <Route exact path="/tvshows" component={Tvshowspage}/>
-              <Route exact path="/info/:data_type/:id" component={Infopage}/> 
-              <Route exact path="/watch-list" component={WatchList}/>
-              <Route exact path="/favorite-list" component={FavoriteList}/>
+              <Route path="/movies" component={Moviespage}/>  
+              <Route path="/tvshows" component={Tvshowspage}/>
+              <Route path="/info/:data_type/:id" component={Infopage}/> 
+              <Route path="/watch-list" component={WatchList}/>
+              <Route path="/favorite-list" component={FavoriteList}/>
             </Switch>
           </div>
           <Footer />
