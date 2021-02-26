@@ -14,10 +14,21 @@ body {
 }
 
 .container {
-  max-width: 1170px;
+  width: 70%;
   margin: auto;
 }
 
 .link {
   text-decoration: none;
+}
+
+@media (max-width: $laptop) {
+  .container {
+    width: 84%;
+  }
+}
+@media (max-width: $tablet) {
+  .container {
+    width: 95%;
+  }
 }

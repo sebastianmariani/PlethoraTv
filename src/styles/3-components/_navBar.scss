@@ -10,7 +10,7 @@
 .navbar__links {
   color: $textColorHeader;
   list-style-type: none;
-  :hover {
+  a:hover {
     color: $white;
   }
   input {
@@ -50,4 +50,47 @@
   width: 40%;
   font-weight: 200;
   font-size: 1rem;
+}
+
+@media (max-width: $laptopL) {
+  .leftNav {
+    font-size: 0.9rem;
+  }
+  .rightNav {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: $laptop) {
+  .leftNav {
+    width: 40%;
+  }
+  .rightNav {
+    font-size: 0.6rem;
+  }
+}
+@media (max-width: $tablet) {
+  input {
+    width: 30%;
+  }
+}
+@media (max-width: $tablet2) {
+  .leftNav {
+    font-size: 0.7rem;
+    width: 55%;
+  }
+  .rightNav {
+    width: 30%;
+  }
+  input {
+    display: none;
+  }
+}
+@media (max-width: $mobile) {
+  .rightNav {
+    font-size: 0.4rem;
+  }
+  .leftNav {
+    width: 60%;
+    font-size: 0.6rem;
+  }
 }

@@ -10,20 +10,22 @@ const FavoriteList = () => {
             { favorite.length > 0 ? (
                 <div>
                     <h2>Watch List</h2>
-                    {favorite.map(show => (    
-                        <div className="showListItem">
-                            {show.poster_path ? (
-                                <img src={`http://image.tmdb.org/t/p/w200${show.poster_path}`} alt={`${show.title || show.name} poster`}/>    
-                            ) : (
-                                <img src={unknownImg} alt={`${show.title || show.name } poster`}></img>
-                            )}
-                            <div className="text">
-                                <h4>{show.title || show.name}</h4>
-                                <p>{show.overview}</p>
+                    {favorite.map(show => (  
+                        <div className="listElement">
+                            <h4>{show.title || show.name}</h4>
+                            <div className="showListItem">
+                                {show.poster_path ? (
+                                    <img src={`http://image.tmdb.org/t/p/w200${show.poster_path}`} alt={`${show.title || show.name} poster`}/>    
+                                ) : (
+                                    <img src={unknownImg} alt={`${show.title || show.name } poster`}></img>
+                                )}
+                                <div className="text">
+                                    <p>{show.overview}</p>
+                                </div>
+                                <button className="remove" onClick={() => removeShowFromFavorite(show.id)}>
+                                    Remove
+                                </button>
                             </div>
-                            <button className="remove" onClick={() => removeShowFromFavorite(show.id)}>
-                                <i className="fas fa-star"></i> Remove from favorite
-                            </button>
                         </div>
                     ))}
                 </div>

@@ -1,0 +1,38 @@
+.homepage {
+  color: $lighterGrey;
+}
+.banner {
+  text-align: center;
+  padding: 10rem 0;
+  font-size: 1.2rem;
+}
+
+.division {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h3 {
+    padding: 0 8%;
+    font-size: 1.2rem;
+  }
+  svg {
+    width: 50%;
+  }
+}
+@media (max-width: $laptopL) {
+  .banner {
+    padding: 5rem 0;
+  }
+}
+
+@media (max-width: $tablet) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .banner {
+    padding: 3rem;
+  }
+  .homepage {
+    padding: 0 1rem;
+  }
+}
