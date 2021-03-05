@@ -6,19 +6,22 @@
   padding: 10rem 0;
   font-size: 1.2rem;
 }
-
 .division {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  margin: 8rem 0;
   h3 {
-    padding: 0 8%;
+    margin: auto 2rem;
     font-size: 1.2rem;
+    text-align: center;
+    width: 50%;
   }
   svg {
     width: 50%;
   }
 }
+
 @media (max-width: $laptopL) {
   .banner {
     padding: 5rem 0;
@@ -30,9 +33,19 @@
     font-size: 1.5rem;
   }
   .banner {
-    padding: 3rem;
+    padding-bottom: 3rem;
+    padding-top: 0rem;
   }
-  .homepage {
-    padding: 0 1rem;
+  .division {
+    margin: 5rem 0;
+    h3 {
+      font-size: 1rem;
+    }
+  }
+}
+@media (max-width: $tablet2) {
+  .division {
+    margin: 0;
+    height: 18rem;
   }
 }
