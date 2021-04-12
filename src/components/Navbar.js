@@ -36,7 +36,7 @@ const Navbar = () => {
                             <li> 
                                 <NavLink to="/favorite-list" activeClassName="active">Favorite</NavLink>
                             </li>
-                            <input type="text" placeholder="Search..." onFocus={toggleFocus}/>
+                            <input id="searchbar" type="text" placeholder="Search..." onFocus={toggleFocus}/>
                         </ul>
                     )}
                 </nav>
