@@ -109,7 +109,7 @@ const Poster = (props) => {
         <div
           className="poster-description"
           style={{
-            background: `linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(http://image.tmdb.org/t/p/w200${data.poster_path})`,
+            background: `linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(https://image.tmdb.org/t/p/w200${data.poster_path})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }}
