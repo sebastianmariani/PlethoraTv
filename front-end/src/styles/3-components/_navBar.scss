@@ -1,0 +1,96 @@
+.navbar {
+  background-color: $darkGrey;
+}
+
+.navbar__nav {
+  @include flex;
+  padding: 2% 0;
+}
+
+.navbar__links {
+  color: $textColorHeader;
+  list-style-type: none;
+  a:hover {
+    color: $white;
+  }
+  #searchbar {
+    @extend %input;
+    background-color: $lighterGrey;
+    padding: 0.5rem;
+    color: $textColorHeader;
+    &:focus {
+      outline-style: none;
+    }
+  }
+  .active {
+    background-color: $blue;
+    border-radius: 50px;
+    color: $white;
+  }
+  a {
+    text-decoration: none;
+    color: $textColorHeader;
+    transition: all 0.3s ease 0s;
+    padding: 5px 10px;
+  }
+  img {
+    width: 20px;
+    color: $textColorHeader;
+  }
+}
+
+.leftNav {
+  @include flex;
+  width: 30%;
+  font-weight: 200;
+  font-size: 1.3rem;
+}
+
+.rightNav {
+  @include flex;
+  font-weight: 200;
+  font-size: 1rem;
+}
+
+@media (max-width: $laptopL) {
+  .leftNav {
+    font-size: 0.9rem;
+  }
+  .rightNav {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: $laptop) {
+  .leftNav {
+    width: 40%;
+  }
+  .rightNav {
+    font-size: 0.6rem;
+  }
+}
+@media (max-width: $tablet) {
+  #searchbar {
+    width: 30%;
+  }
+}
+@media (max-width: $tablet2) {
+  .leftNav {
+    font-size: 0.7rem;
+    width: 55%;
+  }
+  .rightNav {
+    width: 30%;
+  }
+  #searchbar {
+    display: none;
+  }
+}
+@media (max-width: $mobile) {
+  .rightNav {
+    font-size: 0.4rem;
+  }
+  .leftNav {
+    width: 60%;
+    font-size: 0.6rem;
+  }
+}

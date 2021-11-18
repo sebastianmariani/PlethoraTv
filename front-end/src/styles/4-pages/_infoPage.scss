@@ -1,0 +1,59 @@
+.infopage {
+  @include flex;
+  align-items: flex-start;
+  padding: 20px 0;
+  color: $lighterGrey;
+  img {
+    border-radius: 5px;
+  }
+  .unknownImg {
+    width: 100%;
+  }
+}
+
+.infolist {
+  margin-top: 1rem;
+  p {
+    margin: 0.5rem 0;
+  }
+  button {
+    @extend %input;
+    padding: 10px;
+    margin: 0.5rem 0;
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  .add {
+    color: $white;
+    background-color: $blue;
+  }
+  .remove {
+    color: $lighterGrey;
+    border: 1.5px solid $textColorHeader;
+    &:hover {
+      border: 1.5px solid $blue;
+      transition: 0.5s ease-in-out;
+    }
+  }
+}
+
+.description {
+  margin: 0 auto;
+  width: 45%;
+  h3 {
+    margin-bottom: 2rem;
+  }
+  p {
+    margin-bottom: 2rem;
+    max-width: 600px;
+  }
+}
+@media (max-width: $mobile) {
+  .infopage {
+    font-size: 0.7rem;
+  }
+}
