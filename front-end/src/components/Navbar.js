@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { Link , NavLink } from 'react-router-dom';
 import SearchBar from './SearchBar';
+import UserListsNavbar from './UserListsNavbar';
 
 const Navbar = () => {
-    const [isActiveSearch, setIsActiveSearch] = useState(false)
+    const [isActiveSearch, setIsActiveSearch] = useState(false);
 
     const toggleFocus = () => {
         setIsActiveSearch(!isActiveSearch)
-    }
+    } 
 
     return (
         <div className="navbar">
@@ -29,15 +30,7 @@ const Navbar = () => {
                     {isActiveSearch ? (
                         <SearchBar toggleFocus={toggleFocus}/>
                     ): (
-                        <ul className="navbar__links rightNav">
-                            <li>
-                                <NavLink to="/watch-list" activeClassName="active">Watch-list</NavLink>
-                            </li>
-                            <li> 
-                                <NavLink to="/favorite-list" activeClassName="active">Favorite</NavLink>
-                            </li>
-                            <input id="searchbar" type="text" placeholder="Search..." onFocus={toggleFocus}/>
-                        </ul>
+                        <UserListsNavbar />
                     )}
                 </nav>
             </div>
