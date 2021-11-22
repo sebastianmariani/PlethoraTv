@@ -50,6 +50,14 @@
   @include flex;
   font-weight: 200;
   font-size: 1rem;
+  button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-right: 20px;
+    background-color: $blue;
+    color: white;
+  }
 }
 
 @media (max-width: $laptopL) {
